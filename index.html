@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="tg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f141b">
+<title>AI Trend TJ</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root{--bg:#0f141b;--panel:#171e27;--card:#1d2732;--text:#f7f8fa;--muted:#8f9aa8;--accent:#b96bea;--line:rgba(255,255,255,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button{font:inherit}.app{max-width:760px;margin:auto;padding:18px 16px 34px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:11px}.logo{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#d27df0,#8b4bd8);font-weight:800}
+h1{font-size:20px;margin:0}.sub{font-size:12px;color:var(--muted);margin-top:3px}.balance{background:var(--card);border:1px solid var(--line);padding:9px 12px;border-radius:14px;font-weight:700}
+.hero{padding:20px;border-radius:24px;background:linear-gradient(135deg,#241d31,#191f2a);border:1px solid var(--line);margin-bottom:24px}
+.eyebrow{color:#d78df1;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em}.hero h2{font-size:27px;line-height:1.08;margin:8px 0}.hero p{color:var(--muted);margin:0 0 16px}
+.primary{width:100%;border:0;border-radius:15px;padding:14px 16px;background:var(--accent);color:white;font-weight:800;cursor:pointer}
+.section{display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px}.section h3{margin:0;font-size:18px}.section span{color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.trend{min-height:150px;border:1px solid var(--line);border-radius:19px;background:var(--card);overflow:hidden;text-align:left;color:var(--text);cursor:pointer;padding:0}
+.visual{height:95px;display:grid;place-items:center;font-size:34px;background:linear-gradient(135deg,#29213b,#172432)}
+.trend:nth-child(2) .visual{background:linear-gradient(135deg,#243044,#35223e)}.trend:nth-child(3) .visual{background:linear-gradient(135deg,#32251c,#242d39)}
+.trend:nth-child(4) .visual{background:linear-gradient(135deg,#30213b,#202b38)}.trend:nth-child(5) .visual{background:linear-gradient(135deg,#202f34,#39243a)}.trend:nth-child(6) .visual{background:linear-gradient(135deg,#34241f,#25223a)}
+.trend .info{padding:11px 12px}.trend b{display:block;font-size:14px}.trend small{color:var(--muted);display:block;margin-top:4px}
+.bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:22px}.nav{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:15px;padding:12px 6px;cursor:pointer}.nav strong{display:block;font-size:18px}.nav small{color:var(--muted);font-size:11px}
+.notice{margin-top:14px;color:var(--muted);font-size:11px;text-align:center}.toast{position:fixed;left:16px;right:16px;bottom:20px;max-width:728px;margin:auto;background:#252e3a;border:1px solid var(--line);border-radius:15px;padding:13px 15px;transform:translateY(140%);transition:.25s;z-index:5}.toast.show{transform:translateY(0)}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.visual{height:105px}}
+</style>
+</head>
+<body>
+<main class="app">
+<header class="top"><div class="brand"><div class="logo">AT</div><div><h1>AI Trend TJ</h1><div class="sub">Видеоҳои трендиро бо AI созед</div></div></div><div class="balance">💎 <span id="credits">100</span></div></header>
+<section class="hero"><div class="eyebrow">🔥 Ҳозир дар тренд</div><h2>Аз акс — видеои вирусӣ</h2><p>Трендро интихоб кунед, аксро бор кунед — боқимондаашро AI иҷро мекунад.</p><button class="primary" id="createBtn">🎬 Видео созед</button></section>
+<div class="section"><h3>🔥 Трендҳои машҳур</h3><span>мунтазам нав мешаванд</span></div>
+<section class="grid">
+<button class="trend" data-name="Рақси вирусӣ" data-cost="60"><div class="visual">🕺</div><div class="info"><b>Рақси вирусӣ</b><small>60 кредит</small></div></button>
+<button class="trend" data-name="Кинематикӣ" data-cost="70"><div class="visual">🎬</div><div class="info"><b>Кинематикӣ</b><small>70 кредит</small></div></button>
+<button class="trend" data-name="Luxury Dubai" data-cost="80"><div class="visual">🚘</div><div class="info"><b>Luxury Dubai</b><small>80 кредит</small></div></button>
+<button class="trend" data-name="Меми аниматсионӣ" data-cost="50"><div class="visual">😂</div><div class="info"><b>Меми аниматсионӣ</b><small>50 кредит</small></div></button>
+<button class="trend" data-name="Тағйирёбӣ" data-cost="75"><div class="visual">✨</div><div class="info"><b>Тағйирёбӣ</b><small>75 кредит</small></div></button>
+<button class="trend" data-name="Тренди ду нафар" data-cost="80"><div class="visual">❤️</div><div class="info"><b>Тренди ду нафар</b><small>80 кредит</small></div></button>
+</section>
+<div class="section"><h3>🛠 Имкониятҳои дигар</h3></div>
+<div class="bottom"><button class="nav" id="ownBtn"><strong>🪄</strong><small>Худам месозам</small></button><button class="nav" id="historyBtn"><strong>📁</strong><small>Видеоҳои ман</small></button><button class="nav" id="buyBtn"><strong>💎</strong><small>Кредит харед</small></button></div>
+<div class="notice">Версияи аввал • генератсия ва пардохт дар марҳилаи оянда пайваст мешаванд</div>
+</main>
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="close" id="closeModal" type="button" aria-label="Пӯшидан">×</button>
+    <div class="eyebrow">ҚАДАМИ 1</div>
+    <h2 id="modalTitle">Тренд</h2>
+    <p class="modal-sub">Барои оғоз як акс интихоб кунед.</p>
+    <label class="upload" for="photoInput">
+      <div class="upload-icon">📸</div>
+      <strong>Аксро интихоб кунед</strong>
+      <small>JPG ё PNG</small>
+      <input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp">
+    </label>
+    <img id="preview" class="preview" alt="Пешнамоиши акс">
+    <button class="primary" id="generateBtn" type="button" disabled>🎬 Видео созед</button>
+    <div class="modal-note">Арзиш: <b id="modalCost">0</b> кредит</div>
+  </div>
+</div>
+<div class="toast" id="toast" aria-live="polite"></div>
+<style>
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:flex-end;justify-content:center;z-index:10;padding:12px}
+.modal.open{display:flex}.modal-card{position:relative;width:min(760px,100%);background:#171e27;border:1px solid rgba(255,255,255,.1);border-radius:25px;padding:22px 18px 25px}
+.close{position:absolute;right:12px;top:10px;border:0;background:#26313d;color:white;width:42px;height:42px;border-radius:50%;font-size:28px;cursor:pointer}
+.modal h2{margin:7px 0;font-size:25px}.modal-sub{color:var(--muted);margin-top:0}
+.upload{min-height:150px;border:1.5px dashed #6f7b89;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;cursor:pointer;background:#1d2732;margin:15px 0}
+.upload-icon{font-size:38px}.upload small{color:var(--muted)}#photoInput{position:absolute;width:1px;height:1px;opacity:0}
+.preview{display:none;width:100%;max-height:280px;object-fit:contain;border-radius:16px;margin:12px 0;background:#0f141b}.preview.show{display:block}
+.modal-note{text-align:center;color:var(--muted);font-size:12px;margin-top:10px}
+</style>
+<script>
+(function(){
+ const tg=window.Telegram&&window.Telegram.WebApp;if(tg){tg.ready();tg.expand()}
+ const toast=document.getElementById('toast');let timer;
+ const modal=document.getElementById('modal'), title=document.getElementById('modalTitle'), costEl=document.getElementById('modalCost');
+ const input=document.getElementById('photoInput'), preview=document.getElementById('preview'), generate=document.getElementById('generateBtn');
+ let selectedCost=0, objectUrl='';
+ function show(m){toast.textContent=m;toast.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>toast.classList.remove('show'),2600)}
+ function openTrend(name,cost){title.textContent=name;costEl.textContent=cost;selectedCost=cost;input.value='';generate.disabled=true;preview.classList.remove('show');if(objectUrl){URL.revokeObjectURL(objectUrl);objectUrl=''}modal.classList.add('open');modal.setAttribute('aria-hidden','false')}
+ document.querySelectorAll('.trend').forEach(b=>b.addEventListener('click',()=>openTrend(b.dataset.name,Number(b.dataset.cost))));
+ document.getElementById('createBtn').addEventListener('click',()=>openTrend('Видео бо тренди интихоб кунед',60));
+ document.getElementById('closeModal').addEventListener('click',()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')});
+ modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}});
+ input.addEventListener('change',()=>{const file=input.files&&input.files[0];if(!file)return;if(!file.type.startsWith('image/')){show('Лутфан акс интихоб кунед.');input.value='';return}if(objectUrl)URL.revokeObjectURL(objectUrl);objectUrl=URL.createObjectURL(file);preview.src=objectUrl;preview.classList.add('show');generate.disabled=false});
+ generate.addEventListener('click',()=>show('Акс қабул шуд. Қадами навбатӣ пайваст кардани AI-генератсия аст.'));
+ document.getElementById('ownBtn').addEventListener('click',()=>show('AI Studio-ро баъдтар илова мекунем.'));
+ document.getElementById('historyBtn').addEventListener('click',()=>show('Видеоҳои тайёр дар ин ҷо пайдо мешаванд.'));
+ document.getElementById('buyBtn').addEventListener('click',()=>show('Пардохт бо Telegram Stars дар марҳилаи баъдӣ пайваст мешавад.'));
+})();
+</script>
+</body></html>
